@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://igenprotechnologies.com/sitemap.xml
+# If using GitHub Pages at username.github.io/repo-name, set the sitemap URL accordingly.
