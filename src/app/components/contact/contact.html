@@ -1,0 +1,67 @@
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="text-center section-header">
+      <div class="badge">
+        <fa-icon [icon]="faEnvelope"></fa-icon>
+        <span>Contact Us</span>
+      </div>
+      <h2 class="title">
+        Let's Grow Your Business <span class="highlight">Together</span>
+      </h2>
+      <p class="description">
+        Ready to take your digital marketing to the next level? 
+        <br>
+        Contact our experts for a free consultation and customized strategy.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Left: Form -->
+      <div class="contact-form">
+        <div class="card">
+          <h3 class="form-title">Send Us a Message</h3>
+          <p class="form-subtitle">
+            Fill out the form and we'll get back within 24 hours with a customized proposal.
+          </p>
+
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            
+            <div class="form-row">
+              <input type="text" name="name" [(ngModel)]="formData.name" placeholder="Full Name *" required />
+              <input type="email" name="email" [(ngModel)]="formData.email" placeholder="Email Address *" required />
+            </div>
+
+            <div class="form-row">
+              <input type="tel" name="phone" [(ngModel)]="formData.phone" placeholder="Phone Number" />
+              <input type="text" name="company" [(ngModel)]="formData.company" placeholder="Company Name" />
+            </div>
+
+            <select name="service" [(ngModel)]="formData.service">
+              <option *ngFor="let s of servicesList" [value]="s.value">{{ s.label }}</option>
+            </select>
+
+            <textarea name="message" [(ngModel)]="formData.message" placeholder="Tell us about your project..." rows="5" required></textarea>
+
+            <button type="submit" [disabled]="isSubmitting" class="btn-primary">
+              {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right: Info -->
+      <div class="contact-info">
+        <div class="info-card" *ngFor="let info of contactInfo">
+          <div class="icon" [style.background]="info.color">
+            <fa-icon [icon]="info.icon"></fa-icon>
+          </div>
+          <br>
+          <div>
+            <h4>{{ info.title }}</h4>
+            <p *ngFor="let detail of info.details">{{ detail }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

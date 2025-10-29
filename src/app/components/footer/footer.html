@@ -1,0 +1,58 @@
+
+<footer class="footer-section">
+  <div class="footer-container">
+    <!-- First Row: Logo + Info, Services, Company -->
+    <div class="footer-grid">
+      <!-- Logo & About -->
+      <div class="footer-logo">
+        <div class="logo-container">
+          <img src="\igen_icon_bg.png" alt="IGen Logo" />
+          <div>
+            <div class="logo-title">IGen Pro Technologies</div>
+            <div class="logo-subtitle">Marketing Company</div>
+          </div>
+        </div>
+        <p class="company-desc">
+          AI-driven digital marketing company specializing in SEO, PPC, social media, and web design.
+          We help businesses grow their online presence and achieve measurable results.
+        </p>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a *ngFor="let social of socialLinks" [href]="social.href" target="_blank" aria-label="{{social.label}}">
+            <fa-icon [icon]="social.icon"></fa-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-services">
+        <h3>Services</h3>
+        <div class="service-list">
+          <a *ngFor="let service of services" href="#">{{ service }}</a>
+        </div>
+      </div>
+
+      <!-- Company & Contact -->
+      <div class="footer-company">
+        <h3>Company</h3>
+        <ul>
+          <li *ngFor="let item of company">
+            <a href="#" (click)="scrollTo(item.toLowerCase().replace(' ', ''))">{{ item }}</a>
+          </li>
+        </ul>
+
+        <div class="contact-info">
+          <div><fa-icon [icon]="faPhone"></fa-icon> <a href="tel:+919003229136">+91-90032 29136</a></div>
+          <div><fa-icon [icon]="faEnvelope"></fa-icon> <a href="mailto:igenprotechnologies@gmail.com">igenprotechnologies@gmail.com</a></div>
+          <div><fa-icon [icon]="faMap"></fa-icon> No-7, ST-12-(Amma Nagar), No.4 Veerpandi Town Panchayat, Coimbatore, TN-641019</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+      © 2025 IGen Pro Technologies Marketing Company. All rights reserved.
+    </div>
+  </div>
+</footer>

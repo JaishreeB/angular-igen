@@ -1,0 +1,38 @@
+<section id="services" class="services-section">
+  <div class="container">
+    <!-- Header -->
+    <div class="section-header">
+      <h3 class="section-subtitle">Our Services</h3>
+      <h2 class="section-title">Global Digital</h2>
+      <h2 class="section-title highlight">Marketing Solutions</h2>
+      <p class="section-description">
+        Transform your online presence with our expert digital marketing services. From video ads to SEO, social media, and web design, we deliver measurable growth and results.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="services-grid">
+      <div *ngFor="let service of services" class="service-card">
+        <div class="icon-box" [ngStyle]="{ 'background-color': service.color }">
+          <fa-icon [icon]="service.icon" class="icon"></fa-icon>
+        </div>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+        <ul class="feature-list">
+          <li *ngFor="let feature of service.features">✔ {{ feature }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <h3>Ready to Transform Your Digital Presence?</h3>
+      <p>
+        Let's discuss how our digital marketing services can help your business grow and succeed online.
+      </p>
+      <button (click)="scrollToSection('#contact')" class="cta-button">
+        Start Your Project →
+      </button>
+    </div>
+  </div>
+</section>

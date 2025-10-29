@@ -1,0 +1,53 @@
+<header>
+<!-- Top Contact Bar -->
+<div class="top-bar">
+  <div class="container top-bar-container">
+    <div class="contact-left">
+      <div><span class="icon">☎︎</span> <a href="tel:+919003229136">+91 90032 29136</a></div>
+      <div><span class="icon">✉️</span> <a href="mailto:igenprotechnologies@gmail.com">igenprotechnologies@gmail.com</a></div>
+    </div>
+    <div class="contact-right">
+      🚀 Free Digital Marketing Audit - Limited Time!
+    </div>
+  </div>
+</div>
+
+  <!-- Main Navigation -->
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <div class="logo">
+        <img src="\igen_icon_bg.png" alt="IGen Logo">
+        <div class="logo-text">
+          <div class="brand">IGen Pro</div>
+          <div class="sub-brand">Technologies</div>
+        </div>
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="menu desktop-menu">
+        <li *ngFor="let item of menuItems">
+          <a [href]="item.href">{{item.label}}</a>
+        </li>
+        <li>
+          <button class="quote-btn" (click)="scrollToContact()">Get Free Quote</button>
+        </li>
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" (click)="toggleMenu()">
+        <span *ngIf="!isMenuOpen">☰</span>
+        <span *ngIf="isMenuOpen">✖</span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <ul class="menu mobile-menu" *ngIf="isMenuOpen">
+      <li *ngFor="let item of menuItems">
+        <a [href]="item.href" (click)="toggleMenu()">{{item.label}}</a>
+      </li>
+      <li>
+        <button class="quote-btn" (click)="scrollToContact()">Get Free Quote</button>
+      </li>
+    </ul>
+  </nav>
+</header>

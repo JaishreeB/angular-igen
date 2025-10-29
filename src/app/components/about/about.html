@@ -1,0 +1,58 @@
+<section id="about" class="about-section">
+  <div class="container">
+    <!-- Top Grid -->
+    <div class="about-grid">
+      <!-- Left Content -->
+      <div class="about-left">
+        <div class="badge">
+          <fa-icon [icon]="faUsers"></fa-icon>
+          <span>About IGen Pro Technologies</span>
+        </div>
+        <h2 class="title">
+          Empowering Brands <br />
+          <span class="highlight">Digital Presence</span>
+        </h2>
+        <p class="description">
+          At <span class="highlight">IGen Pro Technologies</span>, we are passionate about helping businesses grow in the digital world. 
+          We combine creativity, strategy, and modern technology to design marketing solutions that inspire engagement and drive progress.
+        </p>
+        <p class="description">
+          We believe that every business deserves a strong digital presence. With a vision rooted in innovation and adaptability, we transform ideas into impactful strategies that fuel sustainable growth.
+        </p>
+        <div class="buttons">
+          <button class="btn-primary">Your Success</button>
+          <button class="btn-outline">Our Strategy</button>
+        </div>
+      </div>
+
+      <!-- Right Stats -->
+      <div class="about-stats">
+        <div class="stat-card" *ngFor="let stat of stats">
+          <div class="stat-icon" [ngStyle]="{'background-color': stat.color}">
+            <fa-icon [icon]="stat.icon" class="icon"></fa-icon>
+          </div>
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Values Section -->
+    <div class="values-section">
+      <h3 class="values-title">Our Core Values</h3>
+      <p class="values-desc">
+        These values guide how we work and ensure that every strategy we create empowers our clients to grow with confidence.
+      </p>
+
+      <div class="values-grid">
+        <div class="value-card" *ngFor="let value of values">
+          <div class="value-icon">
+            <fa-icon [icon]="value.icon" class="icon"></fa-icon>
+          </div>
+          <h4 class="value-title">{{ value.title }}</h4>
+          <p class="value-desc">{{ value.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

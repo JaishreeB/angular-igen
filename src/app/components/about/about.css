@@ -1,0 +1,218 @@
+/* General Section */
+.about-section {
+  padding: 2rem 1rem; /* reduced from 4rem */
+  background-color: #f8f9fa;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0; /* remove extra padding */
+}
+
+/* Top Grid */
+.about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* slightly smaller gap */
+  margin-bottom: 2rem; /* reduced from 3rem */
+}
+
+.about-left {
+  flex: 1 1 500px;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #e0f2ff;
+  color: #007bff;
+  padding: 0.4rem 0.8rem; /* slightly smaller */
+  border-radius: 999px;
+  margin-bottom: 0.8rem; /* reduced spacing */
+  font-weight: 600;
+}
+
+/* Titles */
+.title {
+  font-size: 3rem; /* reduced from 2.5rem */
+  font-weight: bolder;
+  margin-bottom: 1rem; /* reduced spacing */
+}
+
+.highlight {
+  color: #007bff;
+}
+
+/* Descriptions */
+.description {
+  font-size: 0.95rem; /* slightly smaller */
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem; /* reduced gap */
+  margin-top: 1rem; /* reduced spacing */
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  color: #fff;
+  padding: 0.6rem 1.2rem; /* smaller padding */
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  border: 2px solid #007bff;
+  background: transparent;
+  color: #007bff;
+  padding: 0.6rem 1.2rem; /* smaller padding */
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn-outline:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Stats */
+.about-stats {
+  flex: 1 1 400px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem; /* reduced gap */
+}
+
+.stat-card {
+  text-align: center;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem; /* reduced padding */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.8rem auto;
+  color: #fff;
+}
+
+.stat-value {
+  font-weight: bold;
+  font-size: 1.25rem; /* reduced font size */
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.85rem; /* smaller label */
+  color: #666;
+}
+
+/* Values Section */
+.values-section {
+  text-align: center;
+  margin-top: 5rem; /* reduced from 4rem */
+}
+
+.values-title {
+  font-size: 1.75rem; /* smaller */
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.values-desc {
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Values Grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem; /* reduced gap */
+}
+
+.value-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem; /* reduced padding */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-3px); /* smaller movement */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.value-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 0.8rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  border-radius: 0.8rem;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.value-title {
+  font-size: 1.15rem; /* smaller */
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.value-desc {
+  font-size: 0.9rem; /* smaller */
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-grid {
+    flex-direction: column;
+  }
+
+  .about-left, .about-stats {
+    flex: 1 1 100%;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .values-title {
+    font-size: 1.5rem;
+  }
+}
