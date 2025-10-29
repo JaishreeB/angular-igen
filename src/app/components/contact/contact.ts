@@ -63,6 +63,29 @@ export class Contact {
     },
   ];
 
+  // Basic helpers to detect phone/email and generate hrefs/aria labels
+  isEmail(detail: string): boolean {
+    return typeof detail === 'string' && /@/.test(detail);
+  }
+
+  isPhone(detail: string): boolean {
+    if (typeof detail !== 'string') return false;
+    const normalized = detail.replace(/[^0-9+]/g, '');
+    return normalized.length >= 7;
+  }
+
+  getHref(detail: string): string {
+    if (this.isEmail(detail)) return `mailto:${detail}`;
+    if (this.isPhone(detail)) return `tel:${detail.replace(/[^0-9+]/g, '')}`;
+    return '#';
+  }
+
+  getAriaLabel(title: string, detail: string): string {
+    if (this.isEmail(detail)) return `${title} email ${detail}`;
+    if (this.isPhone(detail)) return `${title} phone ${detail}`;
+    return `${title} ${detail}`;
+  }
+
   async onSubmit() {
     this.isSubmitting = true;
 

@@ -52,13 +52,32 @@
       <!-- Right: Info -->
       <div class="contact-info">
         <div class="info-card" *ngFor="let info of contactInfo">
+          <!-- If the first detail is actionable (phone/email) make icon clickable -->
           <div class="icon" [style.background]="info.color">
-            <fa-icon [icon]="info.icon"></fa-icon>
+            <ng-container *ngIf="info.details && info.details.length">
+              <a *ngIf="isEmail(info.details[0]) || isPhone(info.details[0])"
+                 [href]="getHref(info.details[0])"
+                 [attr.aria-label]="getAriaLabel(info.title, info.details[0])"
+                 class="icon-link">
+                <fa-icon [icon]="info.icon"></fa-icon>
+              </a>
+              <ng-container *ngIf="!(isEmail(info.details[0]) || isPhone(info.details[0]))">
+                <fa-icon [icon]="info.icon"></fa-icon>
+              </ng-container>
+            </ng-container>
           </div>
           <br>
           <div>
             <h4>{{ info.title }}</h4>
-            <p *ngFor="let detail of info.details">{{ detail }}</p>
+            <div *ngFor="let detail of info.details">
+              <a *ngIf="isEmail(detail) || isPhone(detail)"
+                 [href]="getHref(detail)"
+                 class="contact-link"
+                 [attr.aria-label]="getAriaLabel(info.title, detail)">
+                {{ detail }}
+              </a>
+              <p *ngIf="!isEmail(detail) && !isPhone(detail)">{{ detail }}</p>
+            </div>
           </div>
         </div>
       </div>
