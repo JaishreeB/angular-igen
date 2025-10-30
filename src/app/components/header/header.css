@@ -184,3 +184,9 @@
     font-size: 0.65rem;
   }
 }
+@media (max-width: 768px) {
+  .contact-left {
+    display: none !important;
+  }
+}
+
