@@ -1,3 +1,7 @@
+/* ---------------------------------------------------
+✅ HEADER THEME — White Top Bar + Blue Main Navigation
+---------------------------------------------------- */
+
 /* General */
 * {
   box-sizing: border-box;
@@ -13,11 +17,14 @@
   margin: 0 auto;
 }
 
-/* Top Bar */
+/* -------------------------------
+   🔹 TOP BAR (White Theme)
+--------------------------------*/
 .top-bar {
-  background-color: #007bff; /* Updated color */
-  color: #fff;
-  font-size: 0.85rem; /* slightly smaller */
+  background-color: #ffffff;
+  color: #007bff;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .top-bar-container {
@@ -35,9 +42,10 @@
 }
 
 .contact-left a {
-  color: #fff;
+  color: #007bff;
   text-decoration: none;
   font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .contact-left a:hover {
@@ -49,27 +57,31 @@
   flex: 1;
   font-weight: bold;
   font-size: 0.9rem;
-  margin-top: 0.3rem;
+  color: #007bff;
 }
 
 .icon {
   margin-right: 0.2rem;
+  color: #007bff;
 }
 
-/* Main Navigation */
+/* -------------------------------
+   🔹 MAIN NAVIGATION (Blue Theme)
+--------------------------------*/
 .main-nav {
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
+  background-color: #007bff;
+  border-bottom: none;
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.6rem 0;
 }
 
 /* Logo */
@@ -80,55 +92,60 @@
 }
 
 .logo img {
-  width: 45px; /* slightly smaller */
+  width: 45px;
   height: 45px;
 }
 
 .brand {
   font-weight: bold;
-  font-size: 1.5rem; /* smaller for desktop */
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-weight: bolder;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .sub-brand {
-  font-size: 0.7rem; /* smaller for desktop */
-  color: #555;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-weight: bolder;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.8);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-/* Desktop Menu */
+/* Menu (Desktop) */
 .menu {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .menu li a {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 3px;
 }
 
 .menu li a:hover {
-  color: #007bff;
+  color: #ffea00;
+  border-bottom: 2px solid #ffea00;
 }
 
 /* Quote Button */
 .quote-btn {
-  background: linear-gradient(to right, #007bff, #00bcd4);
+  background: linear-gradient(to right, #ffffff, #e3f2fd);
   border: none;
-  color: #fff;
+  color: #007bff;
   padding: 0.4rem 0.8rem;
   cursor: pointer;
   border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .quote-btn:hover {
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  background: #ffffff;
+  transform: translateY(-2px);
 }
 
 /* Mobile Menu Button */
@@ -137,6 +154,7 @@
   font-size: 1.5rem;
   background: none;
   border: none;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -145,16 +163,24 @@
   flex-direction: column;
   gap: 1rem;
   padding: 0.5rem 0;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
+  background-color: #007bff;
+  border-top: 1px solid rgba(255,255,255,0.3);
 }
 
 .mobile-menu li a {
   display: block;
   padding: 0.5rem 0;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-/* Responsive */
+.mobile-menu li a:hover {
+  color: #ffea00;
+}
+
+/* -------------------------------
+   🔹 Responsive Styles
+--------------------------------*/
 @media (max-width: 992px) {
   .desktop-menu {
     display: none;
@@ -177,16 +203,16 @@
   }
 
   .brand {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .sub-brand {
     font-size: 0.65rem;
   }
 }
+
 @media (max-width: 768px) {
   .contact-left {
     display: none !important;
   }
 }
-
